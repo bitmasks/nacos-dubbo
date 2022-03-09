@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: provider
+
+server:
+  port: 9100
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+    parameters:
+      invokeCluster: one
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://127.0.0.1:8848
+  scan:
+    base-packages: com.hua.service
